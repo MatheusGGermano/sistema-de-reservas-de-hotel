@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Menu {
@@ -122,10 +123,10 @@ public class Menu {
         }
 
         System.out.print("Digite o nome do hóspede para listar suas reservas: ");
-        String hospede = sc.nextLine();
+        String hospede = sc.nextLine().toLowerCase(Locale.ROOT);
 
         for (Reserva listaDeReserva : listaDeReservas) {
-            if (listaDeReserva.getHospede().equals(hospede)) {
+            if (listaDeReserva.getHospede().toLowerCase().equals(hospede)) {
                 System.out.println();
                 System.out.println(listaDeReserva);
             }
